@@ -2,30 +2,27 @@ import React from 'react';
 import {BsFillCartPlusFill, BsCartDash} from "react-icons/bs";
 
 
-function Proizvod({product, Dodaj, Izbaci, UKorpi}) {
+function Proizvod({proizvod, Dodaj, Izbaci, UKorpi}) {
     return (
-        <div className={UKorpi===1 ? ("card-cart"):("proizvod")}>
+        <div className={UKorpi===1 ? ("proizvodKorpa"):("proizvod")}>
             <img 
             className={UKorpi===1 ? ("card-img-left"):('card-img-top')}
-            src="https:/picsum.photos/200" alt="Slika" />
+            src={proizvod.link} alt="Slika" />
             <div className="telo-proizvoda">
-                <h3 className="card-title">{product.title}</h3> 
-                <p className="card-text">{product.description}</p>
-            </div>
+                <h3 className="card-title">{proizvod.naziv}</h3> 
+                <p className="card-text">{proizvod.opis}</p>
+            
             {UKorpi===0 ?
             (<>
-            <button className='btn' onClick={Dodaj}>
+            <button className='btn' onClick={()=>Dodaj(proizvod.id)}>
                 <BsFillCartPlusFill />
             </button>
-            <button className='btn' onClick={Izbaci}>
+            <button className='btn' onClick={()=>Izbaci(proizvod.id)}>
             <BsCartDash />
             </button>
             </> 
-            ):(<>
-            Broj porucenih artikala:
-            {product.amount}
-            </>)}
-            
+            ):(<> Kolicina: {proizvod.kolicina} </>)}
+            </div>
         </div>
     )
 }

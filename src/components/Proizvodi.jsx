@@ -10,7 +10,7 @@ function Proizvodi({proizvodi, Dodaj, Izbaci}) {
     return (
         <div className='all-products'>
 
-            {proizvodi.map((proizvod)=> <Proizvod product={proizvod} key={proizvod.id} Dodaj={Dodaj} Izbaci={Izbaci} UKorpi={0} /> )}
+            {proizvodi.map((proizvod)=> <Proizvod proizvod={proizvod} key={proizvod.id} Dodaj={Dodaj} Izbaci={Izbaci} UKorpi={0} /> )}
 
         </div>
     )

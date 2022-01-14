@@ -11,6 +11,7 @@ function NavBar({brojProizvoda}) {
                <AiOutlineShoppingCart />
                <p className='cart-num'>{brojProizvoda}</p>
            </Link>
+           <Link to='/kupi'>Kupovina</Link>
         </div>
     )
 }
