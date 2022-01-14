@@ -3,6 +3,8 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Proizvodi from './components/Proizvodi';
 import {useState} from "react";
+import Korpa from './components/Korpa';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 function App() {
 
@@ -40,10 +42,15 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <BrowserRouter className="App">
     <NavBar brojProizvoda = {brojProizboda}></NavBar>
-    <Proizvodi proizvodi = {products} Dodaj={Dodaj} Izbaci={Izbaci}></Proizvodi>
-    </div>
+
+    <Routes>
+      <Route path="/" element={<Proizvodi proizvodi = {products} Dodaj={Dodaj} Izbaci={Izbaci}></Proizvodi>} />
+      <Route path="/korpa" element={<Korpa products = {products}/>} />
+    </Routes>
+    
+    </BrowserRouter>
   );
 }
 

@@ -10,11 +10,8 @@ function Proizvodi({proizvodi, Dodaj, Izbaci}) {
     return (
         <div className='all-products'>
 
-            {proizvodi.map((proizvod)=> <Proizvod product={proizvod} key={proizvod.id} Dodaj={Dodaj} Izbaci={Izbaci} /> )}
+            {proizvodi.map((proizvod)=> <Proizvod product={proizvod} key={proizvod.id} Dodaj={Dodaj} Izbaci={Izbaci} UKorpi={0} /> )}
 
-           {/*  <Proizvod product={proizvodi[0]}/> 
-             <Proizvod product={proizvodi[1]}/> 
-             <Proizvod product={proizvodi[2]}/>*/ }
         </div>
     )
 }
